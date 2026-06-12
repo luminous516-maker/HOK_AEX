@@ -182,4 +182,11 @@ def not_found(error):
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("=" * 60)
+    print("🎮 Aetherix E-sports 길드 신청 홈페이지")
+    print("=" * 60)
+    print("✅ 서버 시작 중...")
+    print("📍 URL: http://localhost:5000")
+    print("💾 데이터베이스: database.db")
+    print("=" * 60)
+    app.run(debug=True, host='127.0.0.1', port=5000, threaded=True)
