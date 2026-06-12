@@ -1,0 +1,382 @@
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    background: var(--gray-100);
+}
+
+/* 사이드바 */
+.sidebar {
+    background: var(--gray-800);
+    color: var(--white);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: var(--white);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.nav-item {
+    padding: 12px 15px;
+    color: var(--gray-300);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.logout-button {
+    background: var(--danger-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background: #e53e3e;
+}
+
+/* 메인 콘텐츠 */
+.admin-main {
+    padding: 40px;
+}
+
+.admin-header {
+    background: var(--white);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 28px;
+    color: var(--gray-800);
+    margin-bottom: 10px;
+}
+
+#statisticsText {
+    color: var(--gray-700);
+    font-size: 14px;
+}
+
+/* 섹션 */
+.admin-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.admin-section h2 {
+    font-size: 24px;
+    color: var(--gray-800);
+    margin-bottom: 25px;
+}
+
+/* 필터 버튼 */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: var(--gray-200);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* 테이블 */
+.table-container {
+    overflow-x: auto;
+}
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.applications-table thead {
+    background: var(--gray-100);
+}
+
+.applications-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--gray-800);
+    border-bottom: 2px solid var(--gray-300);
+}
+
+.applications-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--gray-300);
+    color: var(--gray-700);
+}
+
+.applications-table tbody tr:hover {
+    background: var(--gray-100);
+}
+
+.empty-row td {
+    text-align: center;
+    color: var(--gray-500);
+    padding: 40px 12px;
+}
+
+/* 상태 배지 */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.waiting {
+    background: #fef5e7;
+    color: #f39c12;
+}
+
+.status-badge.approved {
+    background: #d4edda;
+    color: #28a745;
+}
+
+.status-badge.rejected {
+    background: #f8d7da;
+    color: #dc3545;
+}
+
+/* 작업 버튼 */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-small {
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+.btn-info {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-info:hover {
+    opacity: 0.9;
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: var(--white);
+}
+
+.btn-success:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+.btn-gray {
+    background: var(--gray-300);
+    color: var(--gray-800);
+}
+
+.btn-gray:hover {
+    background: var(--gray-400);
+}
+
+/* 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.modal-header {
+    background: var(--gray-100);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--gray-300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    color: var(--gray-800);
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--gray-800);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-info-group {
+    margin-bottom: 20px;
+}
+
+.modal-info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.modal-info-value {
+    font-size: 14px;
+    color: var(--gray-800);
+    padding: 10px;
+    background: var(--gray-100);
+    border-radius: 5px;
+}
+
+.modal-footer {
+    background: var(--gray-100);
+    padding: 20px 30px;
+    border-top: 1px solid var(--gray-300);
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav-item {
+        margin-bottom: 0;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+
+    .applications-table {
+        font-size: 12px;
+    }
+
+    .applications-table th,
+    .applications-table td {
+        padding: 8px;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

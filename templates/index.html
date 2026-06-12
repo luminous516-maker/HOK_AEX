@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherix E-sports - 공식 길드 신청</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">⚔️ Aetherix E-sports</h1>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">홈</a>
+                    <a href="#about" class="nav-link">길드 소개</a>
+                    <a href="/admin/login" class="nav-link">관리자</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 메인 섹션 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Aetherix E-sports</h2>
+                <p class="tagline">"실력과 인성을 갖춘 플레이어와 함께 성장합니다."</p>
+                <p class="description">지금 Aetherix의 새로운 길드원이 되어보세요.</p>
+            </div>
+            <div class="hero-image">
+                <div class="guild-icon">⚔️</div>
+            </div>
+        </section>
+
+        <!-- 가입 조건 섹션 -->
+        <section id="about" class="requirements">
+            <h3>가입 조건</h3>
+            <div class="requirements-list">
+                <div class="requirement-item">
+                    <div class="icon">🏆</div>
+                    <h4>실력</h4>
+                    <p>플래티넘 이상의 티어를 보유하신 분</p>
+                </div>
+                <div class="requirement-item">
+                    <div class="icon">💬</div>
+                    <h4>커뮤니케이션</h4>
+                    <p>Discord를 활용한 소통이 가능하신 분</p>
+                </div>
+                <div class="requirement-item">
+                    <div class="icon">🤝</div>
+                    <h4>팀플레이</h4>
+                    <p>내전 및 단체 활동에 참여 가능하신 분</p>
+                </div>
+                <div class="requirement-item">
+                    <div class="icon">🎮</div>
+                    <h4>정기적 활동</h4>
+                    <p>주 3회 이상 게임 플레이가 가능하신 분</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 신청 버튼 -->
+        <section class="apply-section">
+            <h3>지금 신청하세요!</h3>
+            <a href="/apply" class="apply-button">길드 신청하기</a>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>&copy; 2026 Aetherix E-sports. All rights reserved.</p>
+            <p>Discord: Aetherix E-sports | Contact: aetherix@example.com</p>
+        </footer>
+    </div>
+</body>
+</html>

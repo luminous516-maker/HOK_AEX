@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 대시보드 - Aetherix E-sports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>⚔️ Aetherix Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="applications">지원자 관리</a>
+            </nav>
+            <button id="logoutBtn" class="logout-button">로그아웃</button>
+        </aside>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="admin-main">
+            <!-- 헤더 -->
+            <header class="admin-header">
+                <h1>관리자 대시보드</h1>
+                <p id="statisticsText">총 지원자: <span id="totalCount">0</span>명</p>
+            </header>
+
+            <!-- 지원자 관리 섹션 -->
+            <section id="applications" class="admin-section active">
+                <h2>지원자 목록</h2>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">전체</button>
+                    <button class="filter-btn" data-filter="대기">대기중</button>
+                    <button class="filter-btn" data-filter="승인">승인</button>
+                    <button class="filter-btn" data-filter="거절">거절</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="applications-table">
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>닉네임</th>
+                                <th>디스코드 ID</th>
+                                <th>티어</th>
+                                <th>포지션</th>
+                                <th>신청 일시</th>
+                                <th>상태</th>
+                                <th>작업</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsBody">
+                            <tr class="empty-row">
+                                <td colspan="8">지원자가 없습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 상세보기 모달 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>지원자 상세정보</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- 지원자 정보가 여기에 표시됩니다 -->
+            </div>
+            <div class="modal-footer">
+                <button id="approveBtn" class="btn btn-success">승인</button>
+                <button id="rejectBtn" class="btn btn-danger">거절</button>
+                <button class="btn btn-gray close-modal">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>
